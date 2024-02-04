@@ -21,6 +21,9 @@ Check out the live demo here: [Live Demo](https://petrgavrilov.github.io/cargo-v
 - Browse a full list of sea routes.
 - Search and filter to quickly find routes.
 
+<img width="600" alt="Easy Navigation" src="https://github.com/petrgavrilov/cargo-voyage-viewer/assets/14808280/7ae5ddbf-915e-496d-a509-de6594eaf9d7">
+
+
 ### Detailed Route Insights
 
 - View key details: duration, distance, start/end dates, and ports.
@@ -28,9 +31,14 @@ Check out the live demo here: [Live Demo](https://petrgavrilov.github.io/cargo-v
 - Access a table of all route points.
 - See routes on a map with color-coded speeds.
 
+<img width="600" alt="Detailed Route Insights" src="https://github.com/petrgavrilov/cargo-voyage-viewer/assets/14808280/897a6ee1-bd74-40a0-9c01-3dcfe2b1badc">
+
 ### Responsive Design
 
 - Smooth experience on both mobile and desktop.
+
+<img width="600" alt="Responsive Design" src="https://github.com/petrgavrilov/cargo-voyage-viewer/assets/14808280/4308fedc-cf65-483c-940c-8b505c14ee31">
+
 
 ## Installation
 
