@@ -1,27 +1,85 @@
-# MarcuraTest
+# CargoVoyageViewer: Sea Route Visualization with Angular and Google Maps
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+## Description
 
-## Development server
+CargoVoyageViewer is a single-page Angular application designed to visualize sea routes using Google Maps. This project demonstrates the ability to handle geographic data, integrate with Google Maps, and present information in an interactive and user-friendly manner.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Live Demo
 
-## Code scaffolding
+Check out the live demo of the application here: [CargoVoyageViewer Live Demo](http://example.com)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- Dynamic selection and visualization of sea routes on a global map.
+- Interactive Google Maps integration for route display.
+- Speed-time graph for analyzing vessel speed over the course of a journey.
+- Color-coded route visualization based on vessel speed.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+```bash
+git clone https://github.com/[your-username]/VoyageViz.git
+cd VoyageViz
+npm install
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Visit http://localhost:4200/ in your browser.
 
-## Running end-to-end tests
+## Usage
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Select a sea route using the route picker/filter component.
+- View the selected route on the map with detailed information.
+- Analyze the vessel's speed over time on the provided graph.
 
-## Further help
+## Technologies Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Angular
+- Google Maps API
+- Various Angular libraries and tools
+
+## Interesting Details
+
+### How to Display Route on Google Map
+
+Detailed explanation of how the application integrates with Google Maps to display selected sea routes.
+
+### How to Color Google Map Polyline with Different Colors
+
+Discussion on the implementation of color-coded polylines to represent different speeds.
+
+### How to Style Google Map
+
+Techniques used to customize the look and feel of Google Maps within the application.
+
+### How to Visualize Vessel's Speed with Google Map
+
+Explanation of the method used to visually represent the vessel's speed on the map.
+
+### How to Winsorize Speed for Proper Visualization
+
+Insights into data preprocessing for effective visualization, focusing on the winsorization technique.
+
+### How to Calculate Distance Based on Points with Coordinates (Haversine formula)
+
+Elaboration on the use of the Haversine formula to calculate distances between geographic coordinates.
+
+### How Distance is Measured in Marine Traffic
+
+Information on how distances are calculated and represented in the context of marine traffic.
+
+### How to Bounce Map and Add Paddings to Avoid Overlapping with Content
+
+Techniques used to enhance the user interface and experience by adjusting map bounds and padding.
+
+### Useful Angular Built-in Pipes for Data Formatting
+
+Sharing knowledge on how Angular's built-in pipes were utilized for efficient data formatting.
+
+## License
+
+[MIT](LICENSE)
+
+## Contact
+
+For any feedback or questions, contact me at [petter426@gmail.com](mailto:petter426@gmail.com).

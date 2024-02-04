@@ -1,0 +1,33 @@
+<div class="additional-table">
+  <div class="additional-table-header">
+    <span class="additional-table-cell">date & time</span>
+    <span class="additional-table-cell">latitude</span>
+    <span class="additional-table-cell">longitude</span>
+    <span class="additional-table-cell">speed</span>
+  </div>
+
+  <div
+    *ngFor="
+      let point of points | slice : 0 : pointsLimit;
+      trackBy: trackRouteByTimestamp
+    "
+    class="additional-table-row"
+  >
+    <span class="additional-table-cell">
+      {{ point.timestamp | date : "MMM dd HH:mm:ss" }}
+    </span>
+    <span class="additional-table-cell">
+      {{ point.latitude | number : "2.6-6" }}
+    </span>
+    <span class="additional-table-cell">
+      {{ point.longitude | number : "2.6-6" }}
+    </span>
+    <span class="additional-table-cell">
+      {{ point.speed | number : "2.2-2" }}
+    </span>
+  </div>
+
+  <button *ngIf="pointsLimit" (click)="removeLimit()" class="show-more-points">
+    show all points
+  </button>
+</div>

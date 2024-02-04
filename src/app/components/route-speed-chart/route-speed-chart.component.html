@@ -1,0 +1,14 @@
+<div class="chart">
+  <ngx-charts-line-chart
+    [results]="data"
+    [xAxis]="true"
+    [yAxis]="true"
+    [gradient]="true"
+    [wrapTicks]="true"
+    [xAxisTickFormatting]="formatXAxisTick"
+  >
+    <ng-template #tooltipTemplate let-model="model">
+      <div class="tooltip" [innerHTML]="model.tooltipText"></div>
+    </ng-template>
+  </ngx-charts-line-chart>
+</div>

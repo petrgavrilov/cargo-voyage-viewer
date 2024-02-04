@@ -1,0 +1,40 @@
+.port {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+  background-color: #f8f8f8;
+}
+
+.port-info {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 4px 4px 8px;
+  width: 33%;
+
+  &.-full {
+    width: 100%;
+  }
+}
+
+.port-info-label {
+  font-weight: 700;
+  color: #111;
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+
+.port-info-text {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #555;
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}

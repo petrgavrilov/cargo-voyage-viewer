@@ -1,0 +1,265 @@
+.root {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior-y: none;
+}
+
+.header {
+  z-index: 1;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  height: 38px;
+
+  padding: 12px 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #eee;
+}
+
+.body {
+  min-height: calc(100% - 76px);
+}
+
+.title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  color: #111;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.back {
+  font-size: 0;
+  width: 18px;
+  height: 18px;
+  border: 0;
+  background-color: transparent;
+}
+
+.back {
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-top: -12px;
+  margin-bottom: -12px;
+  margin-left: -16px;
+
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  outline: none;
+  position: relative;
+  padding-left: 16px;
+
+  &::before {
+    content: "";
+    margin-right: 4px;
+    display: block;
+    min-width: 6px;
+    width: 6px;
+    height: 6px;
+    border: 2px solid rgba(0, 0, 0, 0.48);
+    border-bottom-right-radius: 1px;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(135deg);
+    transition: all 0.15s ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      border-color: #000;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4px 0;
+}
+
+.info-item {
+  box-sizing: border-box;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow: hidden;
+
+  &.-full {
+    width: 100%;
+  }
+}
+
+.info-label {
+  font-weight: 700;
+  color: #111;
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+
+.info-text {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  app-country-flag {
+    display: block;
+    font-size: 0;
+    margin-right: 4px;
+  }
+}
+
+.info-text-item {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #555;
+  font-size: 12px;
+  line-height: 1.4;
+
+  .-link & {
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+
+    &:hover {
+      border-bottom: 1px solid #999;
+      color: #222;
+    }
+  }
+
+  .-link.-active & {
+    border-bottom: 1px solid #777;
+    color: #111;
+  }
+}
+
+.additional-title {
+  padding: 16px 16px 12px;
+}
+
+.additional-title-label {
+  font-weight: 700;
+  color: #111;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.footer {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  position: sticky;
+  bottom: 0;
+  height: 38px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #eee;
+}
+
+.route-link {
+  position: relative;
+  height: 38px;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  display: block;
+  width: 50%;
+  text-decoration: none;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #777;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &::before,
+  &::after {
+    content: "";
+    top: 16px;
+    position: absolute;
+    display: block;
+    min-width: 4px;
+    width: 4px;
+    height: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.24);
+    border-bottom-right-radius: 1px;
+    border-top: 0;
+    border-left: 0;
+  }
+
+  &:hover {
+    background-color: #f8f8f8;
+    color: #111;
+  }
+
+  &:nth-child(1) {
+    text-align: left;
+    padding-left: 36px;
+
+    &::before {
+      left: 20px;
+      transform: rotate(135deg);
+    }
+
+    &::after {
+      left: 24px;
+      transform: rotate(135deg);
+    }
+
+    border-right: 1px solid #eee;
+  }
+
+  &:nth-child(2) {
+    text-align: right;
+    padding-right: 40px;
+
+    &::before {
+      right: 24px;
+      transform: rotate(315deg);
+    }
+
+    &::after {
+      right: 28px;
+      transform: rotate(315deg);
+    }
+  }
+}
+
+.error {
+  box-sizing: border-box;
+  padding: 48px;
+  min-height: 100%;
+
+  font-weight: 700;
+  color: #999;
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,132 @@
+.root {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior-y: none;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  height: 38px;
+
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #eee;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #efefef;
+  }
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f8f8f8;
+  }
+}
+
+.list-items {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - 78px);
+}
+
+.list-info {
+  box-sizing: border-box;
+  padding: 12px 8px;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #333;
+
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: flex;
+  align-items: center;
+
+  .list-header & {
+    font-weight: 700;
+    color: #111;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+
+  &:nth-child(1) {
+    width: 48px;
+    padding-left: 16px;
+  }
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    width: calc((100% - (48px + 170px)) / 2);
+    min-width: 90px;
+  }
+
+  &:nth-child(4) {
+    width: 170px;
+    padding-right: 16px;
+    text-align: right;
+  }
+}
+
+.list-info-code {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #222;
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.list-info-icon {
+  display: block;
+  margin-right: 6px;
+
+  app-country-flag {
+    display: block;
+    font-size: 0;
+  }
+}
+
+.list-footer {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  position: sticky;
+  bottom: 0;
+  height: 38px;
+
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #eee;
+}
+
+.search-input {
+  box-sizing: border-box;
+  outline: none;
+  display: block;
+  width: 100%;
+  height: 38px;
+  border: 0;
+  padding: 4px 16px 4px 36px;
+  color: #111;
+
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><g clip-path="url(%23a)"><path fill="rgba(0, 0, 0, 0.24)" fill-rule="evenodd" d="M9.913 12.033a6.5 6.5 0 1 1 2.12-2.12l.028.026 3 3a1.5 1.5 0 0 1-2.122 2.122l-3-3a1.817 1.817 0 0 1-.026-.028ZM11 6.5a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Z" clip-rule="evenodd"/></g><defs><clipPath id="a"><path fill="%23fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>');
+  background-repeat: no-repeat;
+  background-position: 16px 13px;
+  background-size: 12px;
+
+  font-size: 13px;
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.48);
+  }
+}

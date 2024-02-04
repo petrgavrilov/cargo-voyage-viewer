@@ -1,0 +1,51 @@
+<div class="root">
+  <div class="list-header">
+    <span class="list-info">ID</span>
+    <span class="list-info">Origin</span>
+    <span class="list-info">Destination</span>
+    <span class="list-info">Dates</span>
+  </div>
+
+  <div class="list-items">
+    <a
+      *ngFor="let route of routes; trackBy: trackRouteById"
+      [routerLink]="'/routes/' + route.id"
+      [queryParams]="filters"
+      class="list-item"
+    >
+      <span class="list-info">#{{ route.id }}</span>
+      <span class="list-info">
+        <span class="list-info-icon">
+          <app-country-flag
+            [country]="route?.fromPort?.country"
+          ></app-country-flag>
+        </span>
+        <span class="list-info-code">{{ route?.fromPort?.code }}</span>
+      </span>
+      <span class="list-info">
+        <span class="list-info-icon">
+          <app-country-flag
+            [country]="route?.toPort?.country"
+          ></app-country-flag>
+        </span>
+        <span class="list-info-code">{{ route?.toPort?.code }}</span>
+      </span>
+      <span class="list-info">
+        {{ route.finishDate | date : "yyyy" }},
+        {{ route.startDate | date : "MMM dd" }}–{{
+          route.finishDate | date : "MMM dd"
+        }}
+      </span>
+    </a>
+  </div>
+
+  <div class="list-footer">
+    <input
+      class="search-input"
+      type="text"
+      placeholder="start typing to filter routes"
+      [value]="filters?.searchTerm || ''"
+      (input)="onSearch($event)"
+    />
+  </div>
+</div>

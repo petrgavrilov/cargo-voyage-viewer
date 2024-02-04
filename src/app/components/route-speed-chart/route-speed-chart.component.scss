@@ -1,0 +1,18 @@
+.chart {
+  width: 100%;
+  height: 172px;
+  margin-bottom: 16px;
+}
+
+.chart::ng-deep {
+  .ngx-charts text {
+    fill: #333;
+    font-size: 10px !important;
+  }
+}
+
+.tooltip {
+  padding: 8px 8px;
+  font-size: 12px;
+  line-height: 1.4;
+}

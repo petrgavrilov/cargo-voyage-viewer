@@ -1,0 +1,32 @@
+<div *ngIf="port" class="port">
+  <div class="port-info">
+    <span class="port-info-label">Code</span>
+    <span class="port-info-text">{{ port.code }}</span>
+  </div>
+  <div class="port-info">
+    <span class="port-info-label">Name</span>
+    <span class="port-info-text">{{ port.name }}</span>
+  </div>
+  <div class="port-info">
+    <span class="port-info-label">Location</span>
+    <span class="port-info-text">{{ port.country }}, {{ port.city }}</span>
+  </div>
+  <div class="port-info">
+    <span class="port-info-label">Type</span>
+    <span class="port-info-text">{{ port.type }}</span>
+  </div>
+  <div class="port-info">
+    <span class="port-info-label">Latitude</span>
+    <span class="port-info-text">{{ port.latitude }}</span>
+  </div>
+  <div class="port-info">
+    <span class="port-info-label">Longitude</span>
+    <span class="port-info-text">{{ port.longitude }}</span>
+  </div>
+  <div class="port-info -full">
+    <span class="port-info-label">Description</span>
+    <div class="port-info-text">
+      <p *ngFor="let text of description">{{ text }}</p>
+    </div>
+  </div>
+</div>
