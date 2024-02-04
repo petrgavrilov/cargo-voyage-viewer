@@ -2,8 +2,7 @@
 
 ## Description
 
-CargoVoyageViewer is a single-page Angular application designed to visualize sea routes using Google Maps.
-This project demonstrates the ability to handle geographic data, integrate with Google Maps, and present information in an interactive and user-friendly manner.
+CargoVoyageViewer is a single-page application designed to visualize sea routes.
 
 https://github.com/petrgavrilov/cargo-voyage-viewer/assets/14808280/05e1021a-d53f-4134-b3be-6ced319af4ef
 
@@ -13,19 +12,30 @@ This project was developed as a home assignment for Marcura Company. Here is a g
 
 ## Live Demo
 
-Check out the live demo of the application here: [Live Demo](https://petrgavrilov.github.io/cargo-voyage-viewer/)
+Check out the live demo here: [Live Demo](https://petrgavrilov.github.io/cargo-voyage-viewer/)
 
 ## Features
 
-- Dynamic selection and visualization of sea routes on a global map.
-- Interactive Google Maps integration for route display.
-- Speed-time graph for analyzing vessel speed over the course of a journey.
-- Color-coded route visualization based on vessel speed.
+### Easy Navigation
+
+- Browse a full list of sea routes.
+- Search and filter to quickly find routes.
+
+### Detailed Route Insights
+
+- View key details: duration, distance, start/end dates, and ports.
+- Observe vessel's speed changes on a chart.
+- Access a table of all route points.
+- See routes on a map with color-coded speeds.
+
+### Responsive Design
+
+- Smooth experience on both mobile and desktop.
 
 ## Installation
 
 ```bash
-git clone [https://github.com/[your-username]/VoyageViz.git](https://github.com/petrgavrilov/cargo-voyage-viewer.git)
+git clone https://github.com/petrgavrilov/cargo-voyage-viewer.git
 cd cargo-voyage-viewer
 npm install
 npm start
@@ -33,17 +43,11 @@ npm start
 
 Visit http://localhost:4200/ in your browser.
 
-## Usage
-
-- Select a sea route using the route picker/filter component.
-- View the selected route on the map with detailed information.
-- Analyze the vessel's speed over time on the provided graph.
-
 ## Technologies Used
 
-- Angular
-- Google Maps API
-- Various Angular libraries and tools
+- [Angular](https://github.com/angular)
+- [Angular Google Maps component](https://github.com/angular/components/tree/main/src/google-maps)
+- [ngx-charts](https://github.com/swimlane/ngx-charts)
 
 ## Interesting Details
 

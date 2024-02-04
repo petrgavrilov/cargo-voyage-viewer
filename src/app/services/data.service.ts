@@ -18,11 +18,6 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) {}
 
-  filterFuncs = [
-    (item: RouteItem, filters: RouteFilters) =>
-      this.filterBySearchTerm(item, filters),
-  ];
-
   loadJsonData$<T>(name: string): Observable<T> {
     if (!this.dataCache.has(name)) {
       this.dataCache.set(
@@ -77,6 +72,11 @@ export class DataService {
       })
     );
   }
+
+  filterFuncs = [
+    (item: RouteItem, filters: RouteFilters) =>
+      this.filterBySearchTerm(item, filters),
+  ];
 
   getRoutes$(filters: RouteFilters): Observable<RouteItem[]> {
     return forkJoin([this.loadRoutesData$(), this.loadPortsData$()]).pipe(
@@ -156,12 +156,14 @@ export class DataService {
   }
 
   private prepareRoutePoints(routeData: RouteDataItem): RoutePoint[] {
-    return routeData.points.map(([longitude, latitude, timestamp, speed]) => ({
-      longitude,
-      latitude,
-      timestamp,
-      speed,
-    }));
+    return routeData.points
+      .map(([longitude, latitude, timestamp, speed]) => ({
+        longitude,
+        latitude,
+        timestamp,
+        speed,
+      }))
+      .sort((prev, next) => prev.timestamp - next.timestamp);
   }
 
   private calculateTotalDistanceInKm(points: RoutePoint[]): number {
