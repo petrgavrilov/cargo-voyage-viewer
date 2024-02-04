@@ -13,7 +13,7 @@ This project was developed as a home assignment for Marcura Company. Here is a g
 
 ## Live Demo
 
-Check out the live demo of the application here: [CargoVoyageViewer Live Demo](http://example.com)
+Check out the live demo of the application here: [Live Demo](https://petrgavrilov.github.io/cargo-voyage-viewer/)
 
 ## Features
 

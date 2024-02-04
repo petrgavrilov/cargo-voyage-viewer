@@ -27,7 +27,9 @@ export class DataService {
     if (!this.dataCache.has(name)) {
       this.dataCache.set(
         name,
-        this.httpClient.get<T>(`/assets/data/${name}.json`).pipe(shareReplay(1))
+        this.httpClient
+          .get<T>(`./assets/data/${name}.json`)
+          .pipe(shareReplay(1))
       );
     }
 

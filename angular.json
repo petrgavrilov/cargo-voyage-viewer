@@ -41,7 +41,8 @@
                   "maximumError": "8kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/cargo-voyage-viewer/"
             },
             "development": {
               "optimization": false,
