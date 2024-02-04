@@ -2,10 +2,14 @@
 
 ## Description
 
-CargoVoyageViewer is a single-page Angular application designed to visualize sea routes using Google Maps. 
+CargoVoyageViewer is a single-page Angular application designed to visualize sea routes using Google Maps.
 This project demonstrates the ability to handle geographic data, integrate with Google Maps, and present information in an interactive and user-friendly manner.
 
 https://github.com/petrgavrilov/cargo-voyage-viewer/assets/14808280/05e1021a-d53f-4134-b3be-6ced319af4ef
+
+## Acknowledgements
+
+This project was developed as a home assignment for Marcura Company. Here is a github repo with the original assignment: [github.com/Marcura/frontend-developer-test](https://github.com/Marcura/frontend-developer-test)
 
 ## Live Demo
 
