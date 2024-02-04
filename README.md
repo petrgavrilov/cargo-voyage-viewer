@@ -1,8 +1,11 @@
-# CargoVoyageViewer: Sea Route Visualization with Angular and Google Maps
+# Sea Route Visualization with Angular and Google Maps
 
 ## Description
 
-CargoVoyageViewer is a single-page Angular application designed to visualize sea routes using Google Maps. This project demonstrates the ability to handle geographic data, integrate with Google Maps, and present information in an interactive and user-friendly manner.
+CargoVoyageViewer is a single-page Angular application designed to visualize sea routes using Google Maps. 
+This project demonstrates the ability to handle geographic data, integrate with Google Maps, and present information in an interactive and user-friendly manner.
+
+https://github.com/petrgavrilov/cargo-voyage-viewer/assets/14808280/05e1021a-d53f-4134-b3be-6ced319af4ef
 
 ## Live Demo
 
@@ -18,10 +21,10 @@ Check out the live demo of the application here: [CargoVoyageViewer Live Demo](h
 ## Installation
 
 ```bash
-git clone https://github.com/[your-username]/VoyageViz.git
-cd VoyageViz
+git clone [https://github.com/[your-username]/VoyageViz.git](https://github.com/petrgavrilov/cargo-voyage-viewer.git)
+cd cargo-voyage-viewer
 npm install
-ng serve
+npm start
 ```
 
 Visit http://localhost:4200/ in your browser.
