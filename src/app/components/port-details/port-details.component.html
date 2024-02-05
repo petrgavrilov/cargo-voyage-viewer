@@ -1,4 +1,5 @@
-<div *ngIf="port" class="port">
+@if (port) {
+<div class="port">
   <div class="port-info">
     <span class="port-info-label">Code</span>
     <span class="port-info-text">{{ port.code }}</span>
@@ -26,7 +27,11 @@
   <div class="port-info -full">
     <span class="port-info-label">Description</span>
     <div class="port-info-text">
-      <p *ngFor="let text of description">{{ text }}</p>
+      @for (text of description; track text) {
+      <p>{{ text }}</p>
+      }
     </div>
   </div>
 </div>
+
+}

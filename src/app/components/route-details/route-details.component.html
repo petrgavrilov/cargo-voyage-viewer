@@ -1,131 +1,131 @@
 <div class="root" #root>
-  <ng-container *ngIf="route">
-    <div class="header">
-      <button class="back" [routerLink]="'/routes'" [queryParams]="filters">
-        back
-      </button>
-      <span class="title"
-        >Route #{{ route.id }} from {{ route.fromPort?.name }} to
-        {{ route.toPort?.name }}</span
+  @if (route) {
+
+  <div class="header">
+    <button class="back" [routerLink]="'/routes'" [queryParams]="filters">
+      back
+    </button>
+    <span class="title"
+      >Route #{{ route.id }} from {{ route.fromPort?.name }} to
+      {{ route.toPort?.name }}</span
+    >
+  </div>
+
+  <div class="body">
+    <div class="info">
+      <div class="info-item">
+        <span class="info-label"> Duration</span>
+        <span class="info-text">
+          <span class="info-text-item">
+            {{ route.durationMs | timeDuration }}
+          </span>
+        </span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-label">Distance</span>
+        <span class="info-text">
+          <span class="info-text-item">
+            {{ route.totalDistanceNmi | number : "0.2-2" }} nmi ({{
+              route.totalDistanceKm | number : "0.2-2"
+            }}
+            km)
+          </span>
+        </span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-label">Start</span>
+        <span class="info-text">
+          <span class="info-text-item">
+            {{ route.startDate | date : "medium" }}
+          </span>
+        </span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-label">Finish</span>
+        <span class="info-text">
+          <span class="info-text-item">
+            {{ route.finishDate | date : "medium" }}</span
+          >
+        </span>
+      </div>
+
+      <div
+        *ngIf="route.fromPort"
+        class="info-item -link"
+        [class.-active]="activePort === route.fromPort"
+        (click)="setActivePort(route.fromPort)"
       >
-    </div>
-
-    <div class="body">
-      <div class="info">
-        <div class="info-item">
-          <span class="info-label"> Duration</span>
-          <span class="info-text">
-            <span class="info-text-item">
-              {{ route.durationMs | timeDuration }}
-            </span>
+        <span class="info-label">Origin</span>
+        <span class="info-text">
+          <app-country-flag
+            [country]="route.fromPort.country"
+          ></app-country-flag>
+          <span class="info-text-item">
+            {{ route.fromPort.code }}
+            {{ route.fromPort.name }}
           </span>
-        </div>
-
-        <div class="info-item">
-          <span class="info-label">Distance</span>
-          <span class="info-text">
-            <span class="info-text-item">
-              {{ route.totalDistanceNmi | number : "0.2-2" }} nmi ({{
-                route.totalDistanceKm | number : "0.2-2"
-              }}
-              km)
-            </span>
-          </span>
-        </div>
-
-        <div class="info-item">
-          <span class="info-label">Start</span>
-          <span class="info-text">
-            <span class="info-text-item">
-              {{ route.startDate | date : "medium" }}
-            </span>
-          </span>
-        </div>
-
-        <div class="info-item">
-          <span class="info-label">Finish</span>
-          <span class="info-text">
-            <span class="info-text-item">
-              {{ route.finishDate | date : "medium" }}</span
-            >
-          </span>
-        </div>
-
-        <div
-          *ngIf="route.fromPort"
-          class="info-item -link"
-          [class.-active]="activePort === route.fromPort"
-          (click)="setActivePort(route.fromPort)"
-        >
-          <span class="info-label">Origin</span>
-          <span class="info-text">
-            <app-country-flag
-              [country]="route.fromPort.country"
-            ></app-country-flag>
-            <span class="info-text-item">
-              {{ route.fromPort.code }}
-              {{ route.fromPort.name }}
-            </span>
-          </span>
-        </div>
-
-        <div
-          *ngIf="route.toPort"
-          class="info-item -link"
-          [class.-active]="activePort === route.toPort"
-          (click)="setActivePort(route.toPort)"
-        >
-          <span class="info-label">Destination</span>
-          <span class="info-text">
-            <app-country-flag
-              [country]="route.toPort.country"
-            ></app-country-flag>
-            <span class="info-text-item">
-              {{ route.toPort.code }}
-              {{ route.toPort.name }}
-            </span>
-          </span>
-        </div>
-
-        <app-port-details
-          *ngIf="activePort"
-          [port]="activePort"
-        ></app-port-details>
+        </span>
       </div>
 
-      <div class="additional">
-        <div class="additional-title">
-          <span class="additional-title-label">Speed Changes</span>
-        </div>
-
-        <app-route-speed-chart [route]="route"></app-route-speed-chart>
-      </div>
-
-      <div class="additional">
-        <div class="additional-title">
-          <span class="additional-title-label">Route points</span>
-        </div>
-
-        <app-route-points [points]="route.points"></app-route-points>
-      </div>
-    </div>
-
-    <div class="footer">
-      <a
-        *ngFor="let route of prevNextRoutes"
-        [routerLink]="'/routes/' + route.id"
-        [queryParams]="filters"
-        class="route-link"
+      <div
+        *ngIf="route.toPort"
+        class="info-item -link"
+        [class.-active]="activePort === route.toPort"
+        (click)="setActivePort(route.toPort)"
       >
-        <span class="route-link-label">#{{ route.id }}</span>
-        from
-        <span class="route-link-label">{{ route?.fromPort?.code }}</span>
+        <span class="info-label">Destination</span>
+        <span class="info-text">
+          <app-country-flag [country]="route.toPort.country"></app-country-flag>
+          <span class="info-text-item">
+            {{ route.toPort.code }}
+            {{ route.toPort.name }}
+          </span>
+        </span>
+      </div>
 
-        to
-        <span class="route-link-label">{{ route?.toPort?.code }}</span>
-      </a>
+      <app-port-details
+        *ngIf="activePort"
+        [port]="activePort"
+      ></app-port-details>
     </div>
-  </ng-container>
 
-  <div *ngIf="!route" class="error">Route not found :(</div>
+    <div class="additional">
+      <div class="additional-title">
+        <span class="additional-title-label">Speed Changes</span>
+      </div>
+
+      <app-route-speed-chart [route]="route"></app-route-speed-chart>
+    </div>
+
+    <div class="additional">
+      <div class="additional-title">
+        <span class="additional-title-label">Route points</span>
+      </div>
+
+      <app-route-points [points]="route.points"></app-route-points>
+    </div>
+  </div>
+
+  <div class="footer">
+    @for (route of prevNextRoutes; track route.id) {
+    <a
+      [routerLink]="'/routes/' + route.id"
+      [queryParams]="filters"
+      class="route-link"
+    >
+      <span class="route-link-label">#{{ route.id }}</span>
+      from
+      <span class="route-link-label">{{ route?.fromPort?.code }}</span>
+
+      to
+      <span class="route-link-label">{{ route?.toPort?.code }}</span>
+    </a>
+    }
+  </div>
+  } @else {
+  <div class="error">Route not found :(</div>
+  }
 </div>

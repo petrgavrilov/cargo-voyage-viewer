@@ -24,8 +24,4 @@ export class RoutePointsComponent {
   removeLimit(): void {
     this.pointsLimit = undefined;
   }
-
-  trackRouteByTimestamp(_: number, point: RoutePoint): number {
-    return point.timestamp;
-  }
 }

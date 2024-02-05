@@ -29,8 +29,4 @@ export class RoutesListComponent {
     const input = event.target as HTMLInputElement;
     this.setFilters.emit({ ...this.filters, searchTerm: input.value });
   }
-
-  trackRouteById(_: number, route: RouteItem): number {
-    return route.id;
-  }
 }

@@ -20,11 +20,11 @@ import { sweden } from './icons/sweden';
 
 @Component({
   selector: 'app-country-flag',
-  template: `<span
-    *ngIf="svgContent"
-    class="icon"
-    [innerHTML]="svgContent"
-  ></span>`,
+  template: `
+    @if (svgContent) {
+    <span class="icon" [innerHTML]="svgContent"></span>
+    }
+  `,
   styles: [
     `
       .icon {

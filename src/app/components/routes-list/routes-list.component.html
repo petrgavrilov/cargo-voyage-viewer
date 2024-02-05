@@ -7,8 +7,8 @@
   </div>
 
   <div class="list-items">
+    @for (route of routes; track route.id) {
     <a
-      *ngFor="let route of routes; trackBy: trackRouteById"
       [routerLink]="'/routes/' + route.id"
       [queryParams]="filters"
       class="list-item"
@@ -37,6 +37,9 @@
         }}
       </span>
     </a>
+    } @empty {
+    <div class="list-empty">No routes found</div>
+    }
   </div>
 
   <div class="list-footer">
