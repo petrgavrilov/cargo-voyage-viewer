@@ -8,7 +8,6 @@ import {
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { RouteFilters, RouteItem } from '../../models/route.interface';
-import { TimeDurationPipe } from '../../pipes/time-duration.pipe';
 import { CountryFlagComponent } from '../country-flag/country-flag.component';
 
 @Component({
@@ -16,8 +15,7 @@ import { CountryFlagComponent } from '../country-flag/country-flag.component';
   templateUrl: 'routes-list.component.html',
   styleUrls: ['routes-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [CommonModule, RouterModule, TimeDurationPipe, CountryFlagComponent],
+  imports: [CommonModule, RouterModule, CountryFlagComponent],
 })
 export class RoutesListComponent {
   @Input() routes: RouteItem[] | null = [];

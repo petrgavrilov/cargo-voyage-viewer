@@ -8,12 +8,11 @@ interface ChartData {
 }
 
 @Component({
-  selector: 'app-route-speed-chart',
-  templateUrl: 'route-speed-chart.component.html',
-  styleUrls: ['route-speed-chart.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [NgxChartsModule],
+    selector: 'app-route-speed-chart',
+    templateUrl: 'route-speed-chart.component.html',
+    styleUrls: ['route-speed-chart.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [NgxChartsModule]
 })
 export class RouteSpeedChartComponent {
   @Input() route?: RouteItem | null;

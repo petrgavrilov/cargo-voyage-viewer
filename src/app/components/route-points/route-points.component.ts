@@ -5,12 +5,11 @@ import { RoutePoint } from '../../models/route.interface';
 export const POINTS_LIMIT = 8;
 
 @Component({
-  selector: 'app-route-points',
-  templateUrl: 'route-points.component.html',
-  styleUrls: ['route-points.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [CommonModule],
+    selector: 'app-route-points',
+    templateUrl: 'route-points.component.html',
+    styleUrls: ['route-points.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [CommonModule]
 })
 export class RoutePointsComponent {
   @Input() points: RoutePoint[] = [];

@@ -19,20 +19,19 @@ import { Port } from '../../models/port.interface';
 import { RoutePointsComponent } from '../route-points/route-points.component';
 
 @Component({
-  selector: 'app-route-details',
-  templateUrl: 'route-details.component.html',
-  styleUrls: ['route-details.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule,
-    TimeDurationPipe,
-    CountryFlagComponent,
-    RouteSpeedChartComponent,
-    PortDetailsComponent,
-    RoutePointsComponent,
-  ],
+    selector: 'app-route-details',
+    templateUrl: 'route-details.component.html',
+    styleUrls: ['route-details.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        CommonModule,
+        RouterModule,
+        TimeDurationPipe,
+        CountryFlagComponent,
+        RouteSpeedChartComponent,
+        PortDetailsComponent,
+        RoutePointsComponent,
+    ]
 })
 export class RouteDetailsComponent implements OnChanges {
   @Input() route?: RouteItem | null;

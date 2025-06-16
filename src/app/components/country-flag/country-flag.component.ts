@@ -17,7 +17,6 @@ import * as icons from './icons';
   styleUrls: ['country-flag.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
-  standalone: true,
 })
 export class CountryFlagComponent {
   country: InputSignal<string | undefined> = input<string>();

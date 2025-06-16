@@ -19,12 +19,11 @@ import { mapsPaddings } from './map.data';
 import { calculateColor, getMinMaxSpeed, winsorizePoints } from './map.helpers';
 
 @Component({
-  selector: 'app-map',
-  templateUrl: 'map.component.html',
-  styleUrls: ['map.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [GoogleMapsModule, MapPolyline, CommonModule],
+    selector: 'app-map',
+    templateUrl: 'map.component.html',
+    styleUrls: ['map.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [GoogleMapsModule, MapPolyline, CommonModule]
 })
 export class MapComponent implements OnInit, OnChanges, OnDestroy {
   @Input() points?: RoutePoint[];

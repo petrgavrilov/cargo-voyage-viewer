@@ -14,8 +14,8 @@ import { RouteFilters, RouteItem } from '../../models/route.interface';
 import { DataService } from '../../services/data.service';
 
 @Component({
-  selector: 'app-route-page',
-  template: `
+    selector: 'app-route-page',
+    template: `
     <app-routes-root>
       <app-map [points]="(route$ | async)?.points || []"></app-map>
       <app-route-details
@@ -25,9 +25,8 @@ import { DataService } from '../../services/data.service';
       ></app-route-details>
     </app-routes-root>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [CommonModule, RouteDetailsComponent, MapComponent, RootComponent],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [CommonModule, RouteDetailsComponent, MapComponent, RootComponent]
 })
 export class RoutePageComponent implements OnInit {
   route$!: Observable<RouteItem | null>;

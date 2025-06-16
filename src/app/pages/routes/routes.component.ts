@@ -9,8 +9,8 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-routes-page',
-  template: `
+    selector: 'app-routes-page',
+    template: `
     <app-routes-root>
       <app-map></app-map>
       <app-routes-list
@@ -20,9 +20,8 @@ import { ActivatedRoute, Router } from '@angular/router';
       ></app-routes-list>
     </app-routes-root>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [CommonModule, RootComponent, MapComponent, RoutesListComponent],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [CommonModule, RootComponent, MapComponent, RoutesListComponent]
 })
 export class RoutesPageComponent {
   routes$!: Observable<RouteItem[]>;
