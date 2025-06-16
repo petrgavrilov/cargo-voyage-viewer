@@ -2,6 +2,7 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  inject,
   Inject,
   Input,
   OnChanges,
@@ -45,7 +46,7 @@ export class MapComponent implements OnInit, OnChanges, OnDestroy {
   projection = new BehaviorSubject<google.maps.Projection | null>(null);
   routePoints = new BehaviorSubject<RoutePoint[]>([]);
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  document: Document = inject(DOCUMENT);
 
   ngOnInit(): void {
     // wait until the map is initialized and the projection is available

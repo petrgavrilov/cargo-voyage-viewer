@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable, forkJoin, map, of, shareReplay } from 'rxjs';
 import { PortDataItem, RouteDataItem } from '../models/data.interface';
 import { Port } from '../models/port.interface';
@@ -16,7 +16,7 @@ export class DataService {
   private routeItemsCache = new Map<number, RouteItem>();
   private searchStringCache = new Map<number, string>();
 
-  constructor(private httpClient: HttpClient) {}
+  private httpClient: HttpClient = inject(HttpClient);
 
   loadJsonData$<T>(name: string): Observable<T> {
     if (!this.dataCache.has(name)) {

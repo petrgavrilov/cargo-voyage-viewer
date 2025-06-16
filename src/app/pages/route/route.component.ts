@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, map, switchMap } from 'rxjs';
 import { MapComponent } from '../../components/map/map.component';
@@ -29,10 +34,8 @@ export class RoutePageComponent implements OnInit {
   prevNextRoutes$!: Observable<RouteItem[]>;
   filters: RouteFilters = {};
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private dataService: DataService
-  ) {}
+  private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
+  private dataService: DataService = inject(DataService);
 
   ngOnInit(): void {
     const queryParams = this.activatedRoute.snapshot.queryParams;

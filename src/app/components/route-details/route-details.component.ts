@@ -4,6 +4,7 @@ import {
   Component,
   ElementRef,
   HostListener,
+  inject,
   Input,
   OnChanges,
   ViewChild,
@@ -42,7 +43,7 @@ export class RouteDetailsComponent implements OnChanges {
 
   activePort: Port | null = null;
 
-  constructor(private router: Router) {}
+  private router = inject(Router);
 
   ngOnChanges(): void {
     this.root?.nativeElement?.scrollTo(0, 0);

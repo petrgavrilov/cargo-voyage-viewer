@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MapComponent } from '../../components/map/map.component';
 import { RootComponent } from '../../components/root/root.component';
 import { RoutesListComponent } from '../../components/routes-list/routes-list.component';
@@ -30,11 +30,9 @@ export class RoutesPageComponent {
   private filters = new BehaviorSubject<RouteFilters>({});
   filters$ = this.filters.asObservable();
 
-  constructor(
-    private dataService: DataService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
-  ) {}
+  private dataService: DataService = inject(DataService);
+  private router: Router = inject(Router);
+  private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
 
   ngOnInit(): void {
     this.routes$ = this.filters.pipe(
