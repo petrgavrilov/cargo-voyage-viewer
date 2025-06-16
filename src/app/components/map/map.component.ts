@@ -1,4 +1,4 @@
-import { CommonModule, DOCUMENT } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -10,6 +10,7 @@ import {
   OnInit,
   SimpleChanges,
   ViewChild,
+  DOCUMENT
 } from '@angular/core';
 import { GoogleMap, GoogleMapsModule, MapPolyline } from '@angular/google-maps';
 import { BehaviorSubject, Subscription, combineLatest, filter } from 'rxjs';
