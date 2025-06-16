@@ -6,6 +6,9 @@
   (mapInitialized)="onMapInitialized()"
   (projectionChanged)="onMapProjectionChanged()"
 >
-  <map-polyline *ngFor="let polyline of polylines" [options]="polyline" />
-  <map-marker *ngFor="let marker of markers" [options]="marker" />
+  @for (polyline of polylines; track polyline.path) {
+  <map-polyline [options]="polyline" />
+  } @for (marker of markers; track marker.anchorPoint) {
+  <map-marker [options]="marker" />
+  }
 </google-map>

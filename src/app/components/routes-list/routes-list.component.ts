@@ -3,8 +3,12 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
+  input,
   Input,
+  InputSignal,
+  output,
   Output,
+  OutputEmitterRef,
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { RouteFilters, RouteItem } from '../../models/route.interface';
@@ -18,10 +22,13 @@ import { CountryFlagComponent } from '../country-flag/country-flag.component';
   imports: [CommonModule, RouterModule, CountryFlagComponent],
 })
 export class RoutesListComponent {
-  @Input() routes: RouteItem[] | null = [];
-  @Input() filters: RouteFilters | null = {};
+  routes: InputSignal<RouteItem[] | null | undefined> = input<
+    RouteItem[] | null
+  >();
+  filters: InputSignal<RouteFilters | null | undefined> =
+    input<RouteFilters | null>();
 
-  @Output() setFilters = new EventEmitter<RouteFilters>();
+  setFilters: OutputEmitterRef<RouteFilters> = output<RouteFilters>();
 
   onSearch(event: Event): void {
     const input = event.target as HTMLInputElement;

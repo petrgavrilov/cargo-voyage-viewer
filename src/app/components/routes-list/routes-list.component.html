@@ -7,7 +7,7 @@
   </div>
 
   <div class="list-items">
-    @for (route of routes; track route.id) {
+    @for (route of routes(); track route.id) {
     <a
       [routerLink]="'/routes/' + route.id"
       [queryParams]="filters"
@@ -47,7 +47,7 @@
       class="search-input"
       type="text"
       placeholder="start typing to filter routes"
-      [value]="filters?.searchTerm || ''"
+      [value]="filters()?.searchTerm || ''"
       (input)="onSearch($event)"
     />
   </div>

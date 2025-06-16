@@ -6,7 +6,8 @@
     <span class="additional-table-cell">speed</span>
   </div>
 
-  @for (point of points | slice : 0 : pointsLimit; track point.timestamp) {
+  @let pointsList = limitedPoints(); @for (point of pointsList; track
+  point.timestamp) {
   <div class="additional-table-row">
     <span class="additional-table-cell">
       {{ point.timestamp | date : "MMM dd HH:mm:ss" }}
@@ -21,7 +22,7 @@
       {{ point.speed | number : "2.2-2" }}
     </span>
   </div>
-  } @if(pointsLimit) {
+  } @if(pointsLimit()) {
   <button (click)="removeLimit()" class="show-more-points">
     show all points
   </button>
